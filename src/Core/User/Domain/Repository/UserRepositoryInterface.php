@@ -11,4 +11,9 @@ interface UserRepositoryInterface
      * @throws UserNotFoundException
      */
     public function getByEmail(string $email): User;
+
+    /**
+     * @return string[] — email list of inactive users
+     */
+    public function getAllInactiveUserEmails(): array;
 }

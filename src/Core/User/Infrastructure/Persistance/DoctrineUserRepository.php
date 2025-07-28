@@ -34,4 +34,16 @@ class DoctrineUserRepository implements UserRepositoryInterface
 
         return $user;
     }
+
+    public function getAllInactiveUserEmails(): array
+    {
+        $qb = $this->entityManager->createQueryBuilder();
+        $qb->select('u.email')
+            ->from(User::class, 'u')
+            ->where('u.isActive = false');
+
+        $result = $qb->getQuery()->getScalarResult();
+
+        return array_column($result, 'email');
+    }
 }
