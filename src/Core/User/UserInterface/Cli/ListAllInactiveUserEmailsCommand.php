@@ -13,7 +13,7 @@ use Symfony\Component\Console\Output\OutputInterface;
     name: 'app:user:list-inactive-emails',
     description: 'Wyświetla adresy e-mail wszystkich nieaktywnych użytkowników'
 )]
-class ListInactiveUserEmails extends Command
+class ListAllInactiveUserEmailsCommand extends Command
 {
     public function __construct(private readonly QueryBusInterface $queryBus)
     {
