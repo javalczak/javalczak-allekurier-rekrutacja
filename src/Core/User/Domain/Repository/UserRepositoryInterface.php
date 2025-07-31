@@ -16,4 +16,14 @@ interface UserRepositoryInterface
      * @return string[] — email list of inactive users
      */
     public function getAllInactiveUserEmails(): array;
+
+    /**
+     * Saves a user (adds or updates).
+     */
+    public function save(User $user): void;
+
+    /**
+     * Commits changes to the database.
+     */
+    public function flush(): void;
 }
